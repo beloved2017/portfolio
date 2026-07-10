@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Olaniyi Tobi Moses | Software Engineer</title>
+<meta name="description" content="Olaniyi Tobi Moses is a software engineer building CBT, mobile, web and offline software solutions through BMITC.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy-950:#060a16;
+    --navy-900:#0a1226;
+    --navy-850:#0e1830;
+    --navy-800:#152241;
+    --navy-700:#213256;
+    --gold-500:#c69a2e;
+    --gold-300:#e6c766;
+    --gold-100:#f6ecc9;
+    --paper:#f8f5ee;
+    --paper-dim:#efe9db;
+    --ink:#11141c;
+    --slate:#8b96b3;
+    --slate-light:#b7c0d8;
+    --line:rgba(230,199,102,0.16);
+    --line-soft:rgba(255,255,255,0.08);
+    --radius:2px;
+    --maxw:1180px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--navy-950);
+    color:var(--slate-light);
+    font-family:'Inter',sans-serif;
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  ::selection{background:var(--gold-500);color:var(--navy-950);}
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+  h1,h2,h3,h4{
+    font-family:'Fraunces',serif;
+    color:var(--paper);
+    font-weight:500;
+    margin:0;
+    letter-spacing:-0.01em;
+  }
+  .eyebrow{
+    font-family:'JetBrains Mono',monospace;
+    font-size:12px;
+    letter-spacing:0.16em;
+    text-transform:uppercase;
+    color:var(--gold-300);
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .eyebrow::before{
+    content:"";
+    width:22px;height:1px;
+    background:var(--gold-500);
+    display:inline-block;
+  }
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 32px;}
+  section{position:relative;}
+  .focus-visible:focus-visible, a:focus-visible, button:focus-visible{
+    outline:2px solid var(--gold-300);
+    outline-offset:3px;
+  }
+
+  /* ---------- NAV ---------- */
+  header.nav{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    background:rgba(6,10,22,0.82);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line-soft);
+  }
+  .nav-inner{
+    max-width:var(--maxw);margin:0 auto;padding:0 32px;
+    height:72px;display:flex;align-items:center;justify-content:space-between;
+  }
+  .brandmark{display:flex;align-items:center;gap:10px;}
+  .brandmark .mono-tag{
+    font-family:'JetBrains Mono',monospace;
+    font-size:13px;color:var(--paper);
+    border:1px solid var(--gold-500);
+    padding:5px 10px;
+    letter-spacing:0.05em;
+  }
+  .brandmark .mono-tag b{color:var(--gold-300);}
+  nav.links{display:flex;gap:34px;align-items:center;}
+  nav.links a{
+    font-size:13px;
+    font-family:'JetBrains Mono',monospace;
+    letter-spacing:0.04em;
+    color:var(--slate-light);
+    transition:color .2s;
+  }
+  nav.links a:hover{color:var(--gold-300);}
+  .nav-cta{
+    border:1px solid var(--gold-500);
+    padding:9px 18px;
+    color:var(--gold-300) !important;
+    font-size:12px !important;
+  }
+  .nav-cta:hover{background:var(--gold-500);color:var(--navy-950) !important;}
+  .burger{display:none;background:none;border:none;color:var(--paper);cursor:pointer;padding:8px;}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    padding:168px 0 100px;
+    background:
+      radial-gradient(ellipse 900px 500px at 85% -10%, rgba(198,154,46,0.14), transparent 60%),
+      var(--navy-950);
+    overflow:hidden;
+  }
+  .hero-grid{
+    display:grid;
+    grid-template-columns:1.15fr 0.85fr;
+    gap:60px;
+    align-items:center;
+  }
+  .hero h1{
+    font-size:clamp(42px,6vw,74px);
+    line-height:0.98;
+    margin:18px 0 22px;
+  }
+  .hero h1 em{
+    font-style:italic;
+    color:var(--gold-300);
+    font-weight:400;
+  }
+  .hero p.lead{
+    font-size:18px;
+    color:var(--slate-light);
+    max-width:520px;
+    margin-bottom:36px;
+  }
+  .hero .slogan{
+    font-family:'Fraunces',serif;
+    font-style:italic;
+    font-size:19px;
+    color:var(--gold-300);
+    margin:0 0 22px;
+    letter-spacing:0.01em;
+  }
+  .btn-row{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:56px;}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:14px 26px;
+    font-family:'JetBrains Mono',monospace;
+    font-size:13px;letter-spacing:0.03em;
+    border-radius:var(--radius);
+    transition:all .2s;
+    cursor:pointer;
+    border:1px solid transparent;
+  }
+  .btn-primary{background:var(--gold-500);color:var(--navy-950);}
+  .btn-primary:hover{background:var(--gold-300);}
+  .btn-ghost{border-color:var(--line-soft);color:var(--paper);}
+  .btn-ghost:hover{border-color:var(--gold-500);color:var(--gold-300);}
+
+  .stat-row{
+    display:flex;
+    flex-wrap:wrap;
+    gap:32px 36px;
+  }
+  .stat b{
+    display:block;
+    font-family:'Fraunces',serif;
+    font-size:30px;
+    color:var(--paper);
+    font-weight:500;
+  }
+  .stat span{
+    font-family:'JetBrains Mono',monospace;
+    font-size:11px;
+    color:var(--slate);
+    text-transform:uppercase;
+    letter-spacing:0.06em;
+  }
+
+  /* hero visual: portrait + scorecard signature */
+  .hero-visual{position:relative;}
+  .portrait-frame{
+    position:relative;
+    border:1px solid var(--line);
+    padding:14px;
+    background:linear-gradient(160deg,var(--navy-850),var(--navy-900));
+  }
+  .portrait-frame img{
+    width:100%;height:auto;
+    filter:grayscale(0.15) contrast(1.03);
+    border:1px solid var(--line-soft);
+  }
+  .portrait-frame::before{
+    content:"";
+    position:absolute;inset:-1px;
+    border:1px solid transparent;
+    background:linear-gradient(135deg,var(--gold-500),transparent 40%) border-box;
+    -webkit-mask:linear-gradient(#000 0 0) padding-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite:xor;
+    mask-composite:exclude;
+    pointer-events:none;
+    opacity:0.6;
+  }
+  .scorecard{
+    position:absolute;
+    bottom:-34px;left:-40px;
+    width:230px;
+    background:var(--navy-800);
+    border:1px solid var(--gold-500);
+    box-shadow:0 20px 50px rgba(0,0,0,0.5);
+    padding:16px 18px;
+    font-family:'JetBrains Mono',monospace;
+  }
+  .scorecard .sc-top{
+    display:flex;justify-content:space-between;align-items:center;
+    font-size:10px;letter-spacing:0.08em;color:var(--slate);
+    text-transform:uppercase;
+    margin-bottom:10px;
+    border-bottom:1px dashed var(--line-soft);
+    padding-bottom:10px;
+  }
+  .sc-dot{width:6px;height:6px;border-radius:50%;background:#4ade80;display:inline-block;margin-right:6px;box-shadow:0 0 6px #4ade80;}
+  .scorecard .sc-label{font-size:11px;color:var(--slate-light);margin-bottom:4px;}
+  .scorecard .sc-score{
+    font-size:34px;color:var(--gold-300);font-weight:600;
+    font-family:'Fraunces',serif;
+  }
+  .scorecard .sc-foot{font-size:10px;color:var(--slate);margin-top:8px;}
+  @media (prefers-reduced-motion: no-preference){
+    .sc-score{animation:none;}
+  }
+
+  /* ---------- RESUME / CV ---------- */
+  #resume{background:var(--navy-900);}
+  .resume-grid{
+    display:grid;
+    grid-template-columns:0.85fr 1.15fr;
+    gap:56px;
+    align-items:center;
+  }
+  .resume-copy p{font-size:16px;color:var(--slate-light);margin:0 0 26px;}
+  .resume-btns{display:flex;gap:16px;flex-wrap:wrap;}
+  .resume-preview{
+    border:1px solid var(--gold-500);
+    background:var(--navy-950);
+    box-shadow:0 30px 70px rgba(0,0,0,0.5);
+    position:relative;
+  }
+  .resume-preview .rp-bar{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:10px 16px;
+    border-bottom:1px solid var(--line-soft);
+    font-family:'JetBrains Mono',monospace;font-size:11px;
+    color:var(--slate);letter-spacing:0.04em;text-transform:uppercase;
+  }
+  .resume-preview iframe{
+    width:100%;height:520px;border:none;display:block;background:#fff;
+  }
+  @media (max-width:980px){
+    .resume-grid{grid-template-columns:1fr;gap:36px;}
+    .resume-preview iframe{height:440px;}
+  }
+  @media (max-width:600px){
+    .resume-preview iframe{height:360px;}
+  }
+
+  /* ---------- SECTION HEADS ---------- */
+  .section-head{
+    max-width:640px;
+    margin-bottom:56px;
+  }
+  .section-head h2{
+    font-size:clamp(30px,4vw,44px);
+    margin-top:16px;
+  }
+  .section-pad{padding:110px 0;}
+  .section-pad.tight{padding:90px 0;}
+  .divider{height:1px;background:var(--line-soft);}
+
+  /* ---------- ABOUT ---------- */
+  #about{background:var(--navy-900);}
+  .about-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:70px;
+    align-items:start;
+  }
+  .about-grid p{font-size:16.5px;color:var(--slate-light);margin:0 0 18px;}
+  .about-grid p:last-child{margin-bottom:0;}
+  .role-list{list-style:none;margin:0;padding:0;border-top:1px solid var(--line-soft);}
+  .role-list li{
+    display:flex;justify-content:space-between;gap:20px;
+    padding:18px 0;
+    border-bottom:1px solid var(--line-soft);
+  }
+  .role-list .role-name{color:var(--paper);font-family:'Fraunces',serif;font-size:17px;}
+  .role-list .role-tag{
+    font-family:'JetBrains Mono',monospace;font-size:11px;
+    color:var(--gold-300);text-transform:uppercase;letter-spacing:0.05em;
+    white-space:nowrap;padding-top:4px;
+  }
+
+  /* ---------- COMPANY / BMITC ---------- */
+  #company{background:var(--navy-950);}
+  .company-top{
+    display:flex;align-items:center;gap:22px;
+    margin-bottom:20px;
+    flex-wrap:wrap;
+  }
+  .company-top img{height:52px;width:auto;}
+  .company-top .tagline{
+    font-family:'JetBrains Mono',monospace;
+    font-size:12px;color:var(--gold-300);
+    letter-spacing:0.08em;text-transform:uppercase;
+    border-left:1px solid var(--line-soft);
+    padding-left:20px;
+  }
+  .product-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:1px;
+    background:var(--line-soft);
+    border:1px solid var(--line-soft);
+  }
+  .product-card{
+    background:var(--navy-900);
+    padding:32px 28px;
+    display:flex;
+    flex-direction:column;
+    min-height:220px;
+    transition:background .25s;
+  }
+  .product-card:hover{background:var(--navy-850);}
+  .product-card .pc-num{
+    font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--gold-500);
+    margin-bottom:16px;
+  }
+  .product-card h3{font-size:19px;color:var(--paper);margin-bottom:10px;}
+  .product-card p{font-size:14px;color:var(--slate);flex-grow:1;margin:0 0 18px;}
+  .product-card .pc-link{
+    font-family:'JetBrains Mono',monospace;font-size:12px;
+    color:var(--gold-300);display:inline-flex;align-items:center;gap:6px;
+  }
+  .product-card .pc-link:hover{color:var(--paper);}
+
+  /* ---------- FLAGSHIP CBT ---------- */
+  #flagship{
+    background:linear-gradient(180deg,var(--navy-900),var(--navy-950));
+  }
+  .flagship-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:64px;
+    align-items:center;
+  }
+  .flagship-badge{
+    display:inline-flex;align-items:center;gap:8px;
+    font-family:'JetBrains Mono',monospace;font-size:11px;
+    letter-spacing:0.06em;text-transform:uppercase;
+    color:var(--navy-950);background:var(--gold-300);
+    padding:7px 12px;margin-bottom:22px;
+  }
+  .flagship-grid h2{font-size:clamp(28px,3.6vw,40px);margin-bottom:20px;}
+  .flagship-grid p{font-size:16px;color:var(--slate-light);margin-bottom:18px;}
+  .flagship-list{list-style:none;margin:26px 0 0;padding:0;}
+  .flagship-list li{
+    display:flex;gap:12px;
+    font-size:14.5px;color:var(--slate-light);
+    padding:10px 0;
+    border-top:1px solid var(--line-soft);
+  }
+  .flagship-list li:before{content:"•";color:var(--gold-500);flex-shrink:0;}
+
+  /* ---------- SKILLS ---------- */
+  #skills{background:var(--navy-950);}
+  .skills-wrap{display:flex;flex-wrap:wrap;gap:12px;}
+  .skill-pill{
+    font-family:'JetBrains Mono',monospace;
+    font-size:13px;
+    color:var(--paper);
+    border:1px solid var(--line-soft);
+    padding:11px 18px;
+    letter-spacing:0.02em;
+    transition:border-color .2s, color .2s;
+  }
+  .skill-pill:hover{border-color:var(--gold-500);color:var(--gold-300);}
+
+  /* ---------- OFFLINE STRIP ---------- */
+  .offline-strip{
+    margin-top:36px;
+    border:1px solid var(--line-soft);
+    border-left:3px solid var(--gold-500);
+    padding:22px 26px;
+    background:var(--navy-900);
+    display:flex;
+    gap:20px;
+    align-items:baseline;
+    flex-wrap:wrap;
+  }
+  .offline-strip .os-num{
+    font-family:'Fraunces',serif;
+    font-size:34px;
+    color:var(--gold-300);
+    flex-shrink:0;
+  }
+  .offline-strip p{margin:0;font-size:14.5px;color:var(--slate-light);}
+  video.demo{
+    width:100%;
+    border:1px solid var(--gold-500);
+    background:#000;
+    box-shadow:0 30px 70px rgba(0,0,0,0.55);
+  }
+  .video-cap{
+    font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--slate);
+    margin-top:12px;letter-spacing:0.02em;
+  }
+
+  /* ---------- MOBILE APPS ---------- */
+  #apps{background:var(--navy-950);}
+  .apps-grid{
+    display:grid;grid-template-columns:1fr 1fr;gap:1px;
+    background:var(--line-soft);border:1px solid var(--line-soft);
+  }
+  .app-card{
+    background:var(--navy-900);
+    padding:38px 34px;
+  }
+  .app-card .plat{
+    display:flex;gap:8px;margin-bottom:20px;
+  }
+  .plat-pill{
+    font-family:'JetBrains Mono',monospace;font-size:10px;
+    border:1px solid var(--line-soft);color:var(--slate-light);
+    padding:4px 9px;letter-spacing:0.04em;text-transform:uppercase;
+  }
+  .app-card h3{font-size:24px;margin-bottom:10px;}
+  .app-card p{font-size:14.5px;color:var(--slate);margin:0;}
+
+  /* ---------- GALLERY ---------- */
+  #gallery{background:var(--navy-900);}
+  .gallery-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    grid-auto-rows:190px;
+    gap:14px;
+  }
+  .gallery-grid figure{
+    margin:0;position:relative;overflow:hidden;
+    border:1px solid var(--line-soft);
+  }
+  .gallery-grid img{
+    width:100%;height:100%;object-fit:cover;
+    filter:grayscale(0.35) brightness(0.88);
+    transition:filter .35s, transform .5s;
+  }
+  .gallery-grid figure:hover img{filter:grayscale(0);transform:scale(1.04);}
+  .gallery-grid figcaption{
+    position:absolute;left:0;right:0;bottom:0;
+    padding:12px 14px;
+    background:linear-gradient(0deg,rgba(6,10,22,0.92),transparent);
+    font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--paper);
+    letter-spacing:0.02em;
+  }
+  .g-span2{grid-column:span 2;}
+  .g-tall{grid-row:span 2;}
+
+  /* ---------- CONTACT ---------- */
+  #contact{
+    background:var(--navy-950);
+    padding-top:110px;
+    padding-bottom:60px;
+    border-top:1px solid var(--line-soft);
+  }
+  .contact-grid{
+    display:grid;grid-template-columns:1.2fr 1fr;gap:60px;
+    margin-bottom:70px;
+  }
+  .contact-grid h2{font-size:clamp(32px,5vw,52px);margin-bottom:20px;}
+  .contact-grid p.lead{color:var(--slate-light);font-size:17px;max-width:480px;}
+  .contact-cards{display:flex;flex-direction:column;gap:1px;background:var(--line-soft);border:1px solid var(--line-soft);}
+  .contact-row{
+    background:var(--navy-900);
+    padding:18px 22px;
+    display:flex;justify-content:space-between;align-items:center;
+    gap:14px;
+  }
+  .contact-row .c-label{
+    font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--slate);
+    text-transform:uppercase;letter-spacing:0.05em;
+  }
+  .contact-row .c-value{color:var(--paper);font-size:15px;}
+  .contact-row a.c-value:hover{color:var(--gold-300);}
+  .wa-btn{
+    display:inline-flex;align-items:center;gap:8px;
+    color:#25D366 !important;font-family:'JetBrains Mono',monospace;font-size:13px;
+  }
+  .wa-btn svg{width:16px;height:16px;flex-shrink:0;}
+
+  footer.foot{
+    border-top:1px solid var(--line-soft);
+    padding:26px 0;
+    display:flex;justify-content:space-between;align-items:center;
+    flex-wrap:wrap;gap:12px;
+  }
+  footer.foot .fmono{
+    font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--slate);
+    letter-spacing:0.03em;
+  }
+  footer.foot .foot-links{display:flex;gap:22px;}
+  footer.foot .foot-links a{font-size:13px;color:var(--slate-light);}
+  footer.foot .foot-links a:hover{color:var(--gold-300);}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width:980px){
+    .hero-grid{grid-template-columns:1fr;gap:64px;}
+    .hero-visual{max-width:380px;margin:0 auto;order:-1;}
+    .about-grid{grid-template-columns:1fr;gap:40px;}
+    .product-grid{grid-template-columns:repeat(2,1fr);}
+    .flagship-grid{grid-template-columns:1fr;gap:40px;}
+    .apps-grid{grid-template-columns:1fr;}
+    .gallery-grid{grid-template-columns:repeat(2,1fr);grid-auto-rows:170px;}
+    .g-span2{grid-column:span 2;}
+    .contact-grid{grid-template-columns:1fr;gap:40px;}
+    nav.links{display:none;}
+    .burger{display:block;}
+  }
+  @media (max-width:600px){
+    .wrap{padding:0 20px;}
+    .nav-inner{padding:0 20px;}
+    .hero{padding:130px 0 70px;}
+    .scorecard{position:static;width:100%;margin-top:20px;}
+    .product-grid{grid-template-columns:1fr;}
+    .gallery-grid{grid-template-columns:repeat(2,1fr);grid-auto-rows:140px;}
+    .btn-row{flex-direction:column;}
+    .btn{justify-content:center;}
+    .company-top .tagline{border-left:none;padding-left:0;}
+    .contact-row{flex-direction:column;align-items:flex-start;gap:6px;}
+  }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a href="#top" class="brandmark">
+      <span class="mono-tag"><b>OTM</b> / dev</span>
+    </a>
+    <nav class="links">
+      <a href="#about">About</a>
+      <a href="#company">BMITC</a>
+      <a href="#flagship">CBT Platform</a>
+      <a href="#apps">Mobile Apps</a>
+      <a href="#resume">Resume</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#contact" class="nav-cta">Contact</a>
+    </nav>
+    <button class="burger" onclick="document.getElementById('mnav').classList.toggle('open')" aria-label="Toggle menu">☰</button>
+  </div>
+  <div id="mnav" style="display:none;flex-direction:column;background:var(--navy-900);border-top:1px solid var(--line-soft);padding:10px 20px 20px;">
+    <a href="#about" style="padding:12px 0;font-family:'JetBrains Mono',monospace;font-size:14px;">About</a>
+    <a href="#company" style="padding:12px 0;font-family:'JetBrains Mono',monospace;font-size:14px;">BMITC</a>
+    <a href="#flagship" style="padding:12px 0;font-family:'JetBrains Mono',monospace;font-size:14px;">CBT Platform</a>
+    <a href="#apps" style="padding:12px 0;font-family:'JetBrains Mono',monospace;font-size:14px;">Mobile Apps</a>
+    <a href="#resume" style="padding:12px 0;font-family:'JetBrains Mono',monospace;font-size:14px;">Resume</a>
+    <a href="#gallery" style="padding:12px 0;font-family:'JetBrains Mono',monospace;font-size:14px;">Gallery</a>
+    <a href="#contact" style="padding:12px 0;font-family:'JetBrains Mono',monospace;font-size:14px;color:var(--gold-300);">Contact</a>
+  </div>
+</header>
+<script>
+document.querySelectorAll('.burger, #mnav a').forEach(el=>{
+  el.addEventListener('click', ()=>{
+    const m=document.getElementById('mnav');
+    m.style.display = m.style.display==='flex' ? 'none' : 'flex';
+  });
+});
+</script>
+
+<main id="top">
+
+  <!-- ================= HERO ================= -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <p class="eyebrow">Software Engineer · Lagos, Nigeria</p>
+        <h1>Olaniyi Tobi<br><em>Moses.</em></h1>
+        <p class="slogan">Powered by Purpose. Driven by Excellence.</p>
+        <p class="lead">I'm designed by God and empowered by His Spirit. I design, build and deploy IT solutions that actually hold up once they're in use. My Computer-Based-Testing platform now runs exam halls across Lagos and Ogun State, and through my company, BMITC, I've shipped mobile apps, school platforms, business websites and offline software for clients who just need things to work.</p>
+        <div class="btn-row">
+          <a href="#flagship" class="btn btn-primary">View the CBT platform →</a>
+          <a href="#contact" class="btn btn-ghost">Get in touch</a>
+        </div>
+        <div class="stat-row">
+          <div class="stat"><b>1st Class</b><span>Computer Science, best graduating student</span></div>
+          <div class="stat"><b>2</b><span>States running my CBT&nbsp;software</span></div>
+          <div class="stat"><b>8+</b><span>Live products built via BMITC</span></div>
+          <div class="stat"><b>20+</b><span>Offline apps built for local machines</span></div>
+          <div class="stat"><b>1</b><span>NYSC award for the CBT platform</span></div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="portrait-frame">
+          <img src="assets/portrait.jpg" alt="Portrait of Olaniyi Tobi Moses">
+        </div>
+        <div class="scorecard">
+          <div class="sc-top"><span><span class="sc-dot"></span>CBT SESSION</span><span>LIVE</span></div>
+          <div class="sc-label">Candidate submitted exam</div>
+          <div class="sc-score" id="scoreVal">00%</div>
+          <div class="sc-foot">Auto-graded in real time · built by OTM</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script>
+  (function(){
+    var el = document.getElementById('scoreVal');
+    var target = 96;
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if(reduce){ el.textContent = target + '%'; return; }
+    var current = 0;
+    var step = function(){
+      current += Math.max(1, Math.round((target-current)/6));
+      if(current >= target){ current = target; el.textContent = current + '%'; return; }
+      el.textContent = current + '%';
+      requestAnimationFrame(function(){ setTimeout(step, 40); });
+    };
+    setTimeout(step, 500);
+  })();
+  </script>
+
+  <!-- ================= ABOUT ================= -->
+  <section id="about" class="section-pad">
+    <div class="wrap about-grid">
+      <div>
+        <p class="eyebrow">About</p>
+        <h2 style="font-size:clamp(28px,3.6vw,38px);margin:16px 0 24px;">A goal-driven engineer who ships and supports what he builds.</h2>
+        <p>I graduated with First Class Honours in Computer Science and finished as the best graduating student in my department. That same drive is what carries into my work now: I'm a software engineer with a hands-on record across web platforms, mobile apps, data and networking. I'm just as comfortable writing code as I am pulling cable and racking systems in a computer lab.</p>
+        <p>What I care about is solving real IT problems for real people: schools that need a dependable exam system, businesses that need a website that actually converts, and communities that need tools that keep working even when conditions on ground aren't ideal. That's the thinking behind BMITC, the company I lead, and behind the CBT platform that started as an NYSC project and grew into my flagship product.</p>
+      </div>
+      <div>
+        <ul class="role-list">
+          <li><span class="role-name">Software Engineer</span><span class="role-tag">Full-stack &amp; product</span></li>
+          <li><span class="role-name">Founder, BMITC</span><span class="role-tag">Beloved Moses I.T. Concepts</span></li>
+          <li><span class="role-name">Data &amp; Network Specialist</span><span class="role-tag">Systems &amp; infrastructure</span></li>
+          <li><span class="role-name">Creator, CBT Platform</span><span class="role-tag">Award-winning · NYSC</span></li>
+          <li><span class="role-name">First Class Graduate</span><span class="role-tag">Best graduating student, CS</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap"><div class="divider"></div></div>
+
+  <!-- ================= SKILLS ================= -->
+  <section id="skills" class="section-pad tight">
+    <div class="wrap">
+      <div class="section-head" style="margin-bottom:36px;">
+        <p class="eyebrow">What I Work With</p>
+        <h2 style="font-size:clamp(26px,3.4vw,34px);margin-top:16px;">A toolkit built for whatever the client actually needs.</h2>
+      </div>
+      <div class="skills-wrap">
+        <span class="skill-pill">.NET Framework</span>
+        <span class="skill-pill">SQL</span>
+        <span class="skill-pill">Microsoft Azure</span>
+        <span class="skill-pill">Mobile Development</span>
+        <span class="skill-pill">Web Development</span>
+        <span class="skill-pill">Web API</span>
+        <span class="skill-pill">Dart / Flutter</span>
+        <span class="skill-pill">Data Analysis</span>
+        <span class="skill-pill">Shopify Development</span>
+        <span class="skill-pill">Networking</span>
+        <span class="skill-pill">Systems Configuration</span>
+        <span class="skill-pill">Security Infrastructure</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap"><div class="divider"></div></div>
+
+  <!-- ================= COMPANY / BMITC ================= -->
+  <section id="company" class="section-pad">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">My Company</p>
+        <div class="company-top" style="margin-top:16px;">
+          <img src="assets/bmitc-logo.png" alt="BMITC logo">
+          <span class="tagline">Your Favourite Solutions Provider</span>
+        </div>
+        <p style="font-size:16.5px;color:var(--slate-light);margin-top:14px;">BMITC (Beloved Moses I.T. Concepts) covers everything under one roof, from writing the code to systems configuration, networking and security infrastructure. Whatever a client needs, we build it and we keep it running. Here's a selection of what we've shipped.</p>
+      </div>
+
+      <div class="product-grid">
+        <div class="product-card">
+          <span class="pc-num">01</span>
+          <h3>Alpha Choice Innovative Academy</h3>
+          <p>Full school website for a Cambridge-affiliated secondary academy, covering admissions, academic pathways and a parent-facing portal.</p>
+          <a class="pc-link" href="https://alphachoicesch.com.ng" target="_blank" rel="noopener">alphachoicesch.com.ng ↗</a>
+        </div>
+        <div class="product-card">
+          <span class="pc-num">02</span>
+          <h3>AgricPal</h3>
+          <p>A platform giving young African agripreneurs offline-friendly training, a produce marketplace with escrow, and access to grants.</p>
+          <a class="pc-link" href="https://agricpal.com" target="_blank" rel="noopener">agricpal.com ↗</a>
+        </div>
+        <div class="product-card">
+          <span class="pc-num">03</span>
+          <h3>Fetomot Energy</h3>
+          <p>Corporate web platform for an energy-sector client, built to present their services and capabilities professionally online.</p>
+          <a class="pc-link" href="https://www.fetomotenergy.com" target="_blank" rel="noopener">fetomotenergy.com ↗</a>
+        </div>
+        <div class="product-card">
+          <span class="pc-num">04</span>
+          <h3>SB Global Services</h3>
+          <p>Cargo logistics platform for Nigeria–UK shipping, with service pages, quote requests and a live parcel-tracking tool.</p>
+          <a class="pc-link" href="https://www.sbglobalservices.com" target="_blank" rel="noopener">sbglobalservices.com ↗</a>
+        </div>
+        <div class="product-card">
+          <span class="pc-num">05</span>
+          <h3>La-Net Hub</h3>
+          <p>A free digital learning hub for Nigerian students, with video lessons, notes and practice questions aligned to WAEC, NECO, JAMB and university curricula. Companion app: LaNet.</p>
+          <a class="pc-link" href="https://la-nethub.com" target="_blank" rel="noopener">la-nethub.com ↗</a>
+        </div>
+        <div class="product-card">
+          <span class="pc-num">06</span>
+          <h3>Jordan's Room For Families</h3>
+          <p>Website for a US-based nonprofit supporting families through youth mental health and substance-abuse programs.</p>
+          <a class="pc-link" href="https://jordansroom.org" target="_blank" rel="noopener">jordansroom.org ↗</a>
+        </div>
+        <div class="product-card">
+          <span class="pc-num">07</span>
+          <h3>Defash Clothing Brand</h3>
+          <p>Shopify storefront for an African fashion label selling Ankara, Aso Oke and Agbada pieces, shipping to Nigeria, the UK and the US.</p>
+          <a class="pc-link" href="https://defashclothingbrand.com" target="_blank" rel="noopener">defashclothingbrand.com ↗</a>
+        </div>
+        <div class="product-card">
+          <span class="pc-num">08</span>
+          <h3>Best Dele AutoSales</h3>
+          <p>Dealership website for a US-based car sales business, with a full vehicle inventory, comparisons and enquiry forms.</p>
+          <a class="pc-link" href="https://bestdeleautosales.com" target="_blank" rel="noopener">bestdeleautosales.com ↗</a>
+        </div>
+      </div>
+
+      <div class="offline-strip">
+        <span class="os-num">20+</span>
+        <p>Beyond the websites, I've also built more than twenty offline applications, desktop software designed to run directly on a local machine without needing an internet connection. A lot of quiet, unglamorous work that still has to be rock solid.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FLAGSHIP: CBT ================= -->
+  <section id="flagship" class="section-pad">
+    <div class="wrap flagship-grid">
+      <div>
+        <span class="flagship-badge">★ Award-winning · NYSC-commissioned</span>
+        <h2>The CBT platform that started in a service year, and never stopped growing.</h2>
+        <p>During my NYSC service year, I built a Computer-Based Testing platform to solve a real problem: schools needed a reliable way to run digital exams. My NYSC officials commissioned and recognised it with an award, and it's since become my major product, now implemented by schools running exams for students across Lagos and Ogun State.</p>
+        <ul class="flagship-list">
+          <li>Runs fully offline, no internet or mobile data required once it's set up on the lab's network</li>
+          <li>Handles both objective (multiple choice) and theory questions in the same exam</li>
+          <li>No printing needed, questions, answers and results all stay digital</li>
+          <li>Auto-grading with instant, transparent results for students and invigilators</li>
+          <li>Built for real exam-hall conditions: stable, fast and simple enough for any invigilator to run</li>
+          <li>Grew from an NYSC project into my flagship commercial product</li>
+        </ul>
+      </div>
+      <div>
+        <video class="demo" controls playsinline preload="metadata" poster="assets/lab2.jpg">
+          <source src="assets/cbt-demo.mp4" type="video/mp4">
+          Your browser doesn't support embedded video. <a href="assets/cbt-demo.mp4">Download the demo</a>.
+        </video>
+        <p class="video-cap">↑ CBT platform in use during a live exam session</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap"><div class="divider"></div></div>
+
+  <!-- ================= MOBILE APPS ================= -->
+  <section id="apps" class="section-pad">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Mobile Apps</p>
+        <h2>Shipped to the App Store and Google Play.</h2>
+      </div>
+      <div class="apps-grid">
+        <div class="app-card">
+          <div class="plat"><span class="plat-pill">iOS</span><span class="plat-pill">Android</span></div>
+          <h3>LaNet</h3>
+          <p>The mobile companion to La-Net Hub, bringing curriculum-aligned lessons, notes and CBT-style practice to students on the go. Available on both app stores.</p>
+        </div>
+        <div class="app-card">
+          <div class="plat"><span class="plat-pill">iOS</span><span class="plat-pill">Android</span></div>
+          <h3>IYFCSMC</h3>
+          <p>A mobile app built for its community's needs and published on both the App Store and Google Play.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap"><div class="divider"></div></div>
+
+  <!-- ================= RESUME / CV ================= -->
+  <section id="resume" class="section-pad">
+    <div class="wrap resume-grid">
+      <div class="resume-copy">
+        <p class="eyebrow">Resume</p>
+        <h2 style="font-size:clamp(28px,3.6vw,38px);margin:16px 0 22px;">Everything above, in one document.</h2>
+        <p>My full CV covers my experience, education, skills and the complete project list, ready to preview right here or download as a PDF.</p>
+        <div class="resume-btns">
+          <a class="btn btn-primary" href="assets/Olaniyi_Tobi_Moses_CV.pdf" download>Download CV ↓</a>
+          <a class="btn btn-ghost" href="assets/Olaniyi_Tobi_Moses_CV.pdf" target="_blank" rel="noopener">Open in new tab ↗</a>
+        </div>
+      </div>
+      <div class="resume-preview">
+        <div class="rp-bar"><span>Olaniyi_Tobi_Moses_CV.pdf</span><span>Preview</span></div>
+        <iframe src="assets/Olaniyi_Tobi_Moses_CV.pdf" title="Olaniyi Tobi Moses CV preview" loading="lazy"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= GALLERY ================= -->
+  <section id="gallery" class="section-pad">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">In the Field</p>
+        <h2>From the exam hall to the server room.</h2>
+      </div>
+      <div class="gallery-grid">
+        <figure class="g-span2 g-tall">
+          <img src="assets/lab2.jpg" alt="Students taking a computer-based test in a school ICT lab">
+          <figcaption>Students sitting a live CBT session</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/award.jpg" alt="Olaniyi with NYSC officials at the Nigeria Learning Passport program">
+          <figcaption>NYSC service year, commissioning</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/lab1.jpg" alt="Rows of desktop computers set up for computer-based testing">
+          <figcaption>CBT lab, ready for exams</figcaption>
+        </figure>
+        <figure class="g-span2">
+          <img src="assets/lab3.jpg" alt="Computer lab being wired and set up">
+          <figcaption>Setting up a new CBT lab</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CONTACT ================= -->
+  <section id="contact">
+    <div class="wrap">
+      <div class="contact-grid">
+        <div>
+          <p class="eyebrow">Get in touch</p>
+          <h2>Let's build something that works.</h2>
+          <p class="lead">Whether it's a CBT deployment for your school, a product for your business, or something new entirely, I'd like to hear about it. I'm also actively open to partnering and collaborating with other developers, businesses and organisations, so if that's you, please reach out.</p>
+        </div>
+        <div class="contact-cards">
+          <div class="contact-row">
+            <span class="c-label">Phone</span>
+            <a class="c-value" href="tel:+2348141244929">0814 124 4929</a>
+          </div>
+          <div class="contact-row">
+            <span class="c-label">Email</span>
+            <a class="c-value" href="mailto:olaniyitobi06@gmail.com">olaniyitobi06@gmail.com</a>
+          </div>
+          <div class="contact-row">
+            <span class="c-label">WhatsApp</span>
+            <a class="wa-btn" href="https://wa.me/2348141244929" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2Zm0 18.13h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.22 8.22 0 0 1-1.26-4.36c0-4.54 3.7-8.24 8.26-8.24 2.2 0 4.27.86 5.83 2.42a8.18 8.18 0 0 1 2.42 5.83c0 4.55-3.7 8.21-8.26 8.21Zm4.52-6.16c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.13-.17.25-.64.81-.78.97-.14.17-.29.19-.53.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.39-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.15.16-.25.24-.42.08-.17.04-.31-.02-.43-.06-.12-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.86.85-.86 2.06s.89 2.39 1.01 2.56c.12.17 1.75 2.67 4.24 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.08.15-1.18-.07-.11-.23-.17-.48-.29Z"/></svg>
+              WhatsApp me
+            </a>
+          </div>
+          <div class="contact-row">
+            <span class="c-label">LinkedIn</span>
+            <a class="c-value" href="https://www.linkedin.com/in/olaniyitobimoses/" target="_blank" rel="noopener">/in/olaniyitobimoses</a>
+          </div>
+          <div class="contact-row">
+            <span class="c-label">GitHub</span>
+            <a class="c-value" href="https://github.com/beloved2017" target="_blank" rel="noopener">/beloved2017</a>
+          </div>
+        </div>
+      </div>
+      <footer class="foot">
+        <span class="fmono">© <span id="yr"></span> Olaniyi Tobi Moses · Built &amp; maintained by BMITC</span>
+        <div class="foot-links">
+          <a href="https://www.linkedin.com/in/olaniyitobimoses/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://github.com/beloved2017" target="_blank" rel="noopener">GitHub</a>
+          <a href="mailto:olaniyitobi06@gmail.com">Email</a>
+        </div>
+      </footer>
+    </div>
+  </section>
+
+</main>
+<script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+</body>
+</html>
